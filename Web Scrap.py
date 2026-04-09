@@ -481,3 +481,9 @@ plt.show()
 print("  Saved: comparison_chart.png")
 
 print("\n All analysis complete!")
+
+"""
+The naive OLS regression estimated that AI adoption is associated with a 4.49 percentage point increase in year-over-year revenue growth (p < 0.001, R² = 0.27). However, after applying Propensity Score Matching to control for observable confounders, the Average Treatment Effect on the Treated (ATT) dropped to 2.30 percentage points (p = 0.004, 95% CI: [0.81, 3.79]). While the effect remains statistically significant, its magnitude was roughly cut in half.
+This shift strongly suggests that selection bias inflates naive estimates of AI's impact. Firms that adopt AI are not randomly selected, they tend to be larger, better-funded, concentrated in high-growth segments like Payments, and invest more heavily in R&D. The naive OLS conflates these pre-existing advantages with the causal effect of AI itself. Without adjustment, the superior performance of AI may largely reflect the characteristics of firms that adopt it, not the technology's standalone contribution.
+Regarding the validity of PSM assumptions, the common support condition was reasonably satisfied. The propensity score distributions for treated (0.22–0.98) and control (0.01–0.84) groups showed substantial overlap, meaning suitable matches existed across most of the score range. The balancing property, however, was only partially achieved. While several covariates improved after matching others, particularly continuous variables like Team Size, R&D Spend, and Founded year,  showed increased imbalance post-match. This is a recognized limitation of 1:1 nearest-neighbor matching on small samples, and suggests that results should be interpreted with caution. Caliper-based matching or inverse probability weighting could improve balance in future analyses.
+"""
